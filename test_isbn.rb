@@ -14,7 +14,9 @@ def test_lenght_false
 	assert_equal(false,isbn_validator("00471958697"))
 end
 
-
+def test_with_hypens_and_spaces
+	assert_equal(true,isbn_validator("0-321-14653-0"))
+end
 
 
 end
