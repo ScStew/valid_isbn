@@ -17,7 +17,7 @@ def isbn_validator(isbn)
 
 	elsif arr.length == 13
 		if key_checker(arr) == true
-
+			true
 		else 
 			false
 		end
@@ -42,7 +42,6 @@ def key_checker(arr)
 		end
 		
 	else
-		arr.length == 13
 		valid_keys.slice!(-1)
 		arr.each do |x|
 			if valid_keys.include?(x)
@@ -53,11 +52,11 @@ def key_checker(arr)
 		end
 
 	end
-		if true_arr.include?(false)
-			false
-		else
-			true
-		end
+	if true_arr.include?(false)
+		false
+	else
+		true
+	end
 end
 
 
