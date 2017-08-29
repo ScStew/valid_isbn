@@ -18,7 +18,10 @@ def isbn_validator(isbn)
 	elsif arr.length == 13
 		if key_checker(arr) == true
 			woo = big_math(arr)
-			if woo = arr[-1]
+			p woo
+			p arr
+			p arr[-1]
+			if woo == arr[-1]
 				true
 			else
 				false
@@ -92,13 +95,20 @@ end
 def big_math(arr)
 counter = 1
 adder = []
-	arr.each do |x|
+	12.times do
 		if counter%2 == 0
-			mult = x.to_i*3
+			mult = arr[counter-1].to_i*3
 			adder << mult
 		else
-			mult = x.to_i*1
+			mult = arr[counter-1].to_i*1
 			adder << mult
 		end
-
+		counter += 1
+	end
+	p adder
+	sum = adder.sum
+	y = sum % 10
+	x = 10 - y
+	checksum = y % 10
+	p checksum.to_s
 end

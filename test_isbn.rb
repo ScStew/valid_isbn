@@ -45,4 +45,13 @@ end
 def test_isbn3_incorrect_key
 	assert_equal(false,isbn_validator("978-0-x3-149x05-0"))
 end
+
+def test_isbn13_1
+	assert_equal(true,isbn_validator("978-0-13-149505-0"))
+end
+
+def test_isbn13_1_fail
+	assert_equal(false,isbn_validator("978-0-13-149505-4"))
+end
+
 end
