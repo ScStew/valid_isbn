@@ -26,5 +26,8 @@ def test_for_valid_keys_fail
 	assert_equal(false,isbn_validator("0-321-14z5y-0"))
 end
 
+def test_for_checksum_pass
+	assert_equal(true,isbn_validator("00471958697"))
+end
 
 end
