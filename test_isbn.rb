@@ -34,5 +34,11 @@ def test_for_checksum_fail
 	assert_equal(false,isbn_validator("0471958698"))
 end
 
+def test_for_x_checksum
+	assert_equal(true,isbn_validator("877195869x"))
+end
 
+def test_isbn13
+	assert_equal(true,isbn_validator("978-0-13-149505-0"))
+end
 end
