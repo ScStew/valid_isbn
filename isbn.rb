@@ -4,7 +4,8 @@ def isbn_validator(isbn)
 	
 	if arr.length == 10
 		if key_checker(arr) == true
-			if math(arr) == arr[-1]
+			woo = math(arr)
+			if woo == arr[-1]
 				true
 			else
 				false
@@ -42,14 +43,17 @@ def math(arr)
 
 	counter = 1
 	check = []
-	arr.each do |x|
-		mult = x.to_i * counter
+	tick = arr.length-1
+	tick.times do
+		mult = arr[counter-1].to_i * counter
 		check << mult
 	counter += 1
 	end
-	sum = mult.sum
-	checksum = sum%11
 
+	sum = check.sum
+	
+	checksum = sum%11
+	# p "#{checksum} checksum!!!!!!!!!!!!!!!!!"
 	if checksum == 10
 		checksum = "x"
 	else
