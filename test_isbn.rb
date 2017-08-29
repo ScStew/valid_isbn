@@ -22,4 +22,9 @@ def test_for_valid_keys
 	assert_equal(true,isbn_validator("0-321-14653-0"))
 end
 
+def test_for_valid_keys_fail
+	assert_equal(false,isbn_validator("0-321-14z5y-0"))
+end
+
+
 end
