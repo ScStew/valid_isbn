@@ -105,10 +105,10 @@ adder = []
 		end
 		counter += 1
 	end
-	p adder
+	# p adder
 	sum = adder.sum
 	y = sum % 10
 	x = 10 - y
 	checksum = y % 10
-	p checksum.to_s
+	checksum.to_s
 end

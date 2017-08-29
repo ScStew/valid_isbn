@@ -54,4 +54,11 @@ def test_isbn13_1_fail
 	assert_equal(false,isbn_validator("978-0-13-149505-4"))
 end
 
+def test_isbn13_2
+	assert_equal(true,isbn_validator("978 0 471 48648 0"))
+end
+
+def test_isbn13_2_failed
+	assert_equal(false,isbn_validator("978 0 471 48648 7"))
+end
 end
