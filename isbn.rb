@@ -1,49 +1,49 @@
-# def isbn_validator(isbn)
-# 	isbn_special = isbn.gsub!(/[^0-9A-Za-z]/, "")
-# 	if isbn_special.length == 10
-# 		if key_checker_small(isbn) == true
-# 			isbn.gsub!(/[^0-9A-Za-z]/, "")
-# 			arr = isbn.split(//)
+def isbn_validator(isbn)
+	isbn_special = isbn.gsub(/[^0-9A-Za-z]/, "")
+	if isbn_special.length == 10
+		if key_checker_small(isbn) == true
+			isbn.gsub!(/[^0-9A-Za-z]/, "")
+			arr = isbn.split(//)
 			
-# 			if arr.length == 10
-# 				checksum = math(arr)
-# 				if checksum == arr[-1]
-# 					true
-# 				else
-# 					false 
-# 				end
-# 			else
-# 				false
-			# end
-# 		else
-# 			false
-# 		end	
-# 	elsif isbn_special.length == 13
-# 		if key_checker_large(isbn)
-# 			isbn.gsub!(/[^0-9A-Za-z]/, "")
-# 			arr = isbn.split(//)
-# 			if arr.length = 13
-# 				checksum = big_math(arr)
-# 				# p woo
-# 				# p arr
-# 				# p arr[-1]
-# 				if checksum == arr[-1]
-# 					true
-# 				else
-# 					false
-# 				end	
-# 			else
-# 				false
-# 			end
+			if arr.length == 10
+				checksum = math(arr)
+				if checksum == arr[-1]
+					true
+				else
+					false 
+				end
+			else
+				false
+			end
+		else
+			false
+		end	
+	elsif isbn_special.length == 13
+		if key_checker_large(isbn)
+			isbn.gsub!(/[^0-9A-Za-z]/, "")
+			arr = isbn.split(//)
+			if arr.length = 13
+				checksum = big_math(arr)
+				# p woo
+				# p arr
+				# p arr[-1]
+				if checksum == arr[-1]
+					true
+				else
+					false
+				end	
+			else
+				false
+			end
 			
-# 		else
-# 			false
-# 		end
-# 	else 
-# 		false
+		else
+			false
+		end
+	else 
+		false
 		
-# 	end
-# end
+	end
+end
 
 def key_checker_small(isbn)
 	arr = isbn.split(//)
