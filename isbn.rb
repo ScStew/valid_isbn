@@ -65,23 +65,23 @@ def key_checker_small(isbn)
 
 end
 
-# def key_checker_large(isbn)
-# 	arr = isbn.split(//)
-# 		true_arr = []	
-# 		valid_keys = ["0","1","2","3","4","5","6","7","8","9","-"," "]
-# 		arr.each do |x|
-# 			if valid_keys.include?(x)
-# 				true_arr << true
-# 			else
-# 				true_arr << false
-# 			end
-# 		end
-# 	if true_arr.include?(false)
-# 		false
-# 	else
-# 		true
-# 	end
-# end
+def key_checker_large(isbn)
+	arr = isbn.split(//)
+		true_arr = []	
+		valid_keys = ["0","1","2","3","4","5","6","7","8","9","-"," "]
+		arr.each do |x|
+			if valid_keys.include?(x)
+				true_arr << true
+			else
+				true_arr << false
+			end
+		end
+	if true_arr.include?(false)
+		false
+	else
+		true
+	end
+end
 
 # def math(arr)
 

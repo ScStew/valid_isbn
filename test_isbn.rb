@@ -73,7 +73,13 @@ def test_key_checker_small_fail
 	assert_equal(false,key_checker_small("0471958z97"))
 end	
 
+def test_key_checker_large
+	assert_equal(true,key_checker_large("978-0-13-149505-4"))
+end
 
+def test_key_checker_large_failed
+	assert_equal(false,key_checker_large("978-&-13-149%05-4"))
+end
 
 
 
