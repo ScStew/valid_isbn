@@ -22,7 +22,7 @@ def isbn_validator(isbn)
 		if key_checker_large(isbn)
 			isbn.gsub!(/[^0-9A-Za-z]/, "")
 			arr = isbn.split(//)
-			if arr.length = 13
+			if arr.length == 13
 				checksum = big_math(arr)
 				# p woo
 				# p arr
