@@ -10,4 +10,8 @@ post "/number" do
 	redirect "/results?isbn=" + isbn
 end
 
+get "/results"
+	isbn = params[:isbn]
+	erb :results, locals:{isbn:isbn}
+end
 
