@@ -61,7 +61,7 @@ end
 def test_isbn13_2_failed
 	assert_equal(false,isbn_validator("978 0 471 48648 7"))
 end
-
+ 
 def test_key_checker_small
 	assert_equal(true,key_checker_small("0471958697"))
 end
