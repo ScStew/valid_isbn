@@ -103,23 +103,23 @@ def math(arr)
 	end
 end
 
-# def big_math(arr)
-# counter = 1
-# adder = []
-# 	12.times do
-# 		if counter%2 == 0
-# 			mult = arr[counter-1].to_i*3
-# 			adder << mult
-# 		else
-# 			mult = arr[counter-1].to_i*1
-# 			adder << mult
-# 		end
-# 		counter += 1
-# 	end
-# 	# p adder
-# 	sum = adder.sum
-# 	y = sum % 10
-# 	x = 10 - y
-# 	checksum = x % 10
-# 	checksum.to_s
-# end
+def big_math(arr)
+counter = 1
+adder = []
+	12.times do
+		if counter%2 == 0
+			mult = arr[counter-1].to_i*3
+			adder << mult
+		else
+			mult = arr[counter-1].to_i*1
+			adder << mult
+		end
+		counter += 1
+	end
+	# p adder
+	sum = adder.sum
+	y = sum % 10
+	x = 10 - y
+	checksum = x % 10
+	checksum.to_s
+end

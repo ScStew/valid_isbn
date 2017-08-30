@@ -89,6 +89,18 @@ def test_math_with_x
 	assert_equal("x",math("877195869x"))
 end
 
+def test_big_math
+	assert_equal("0",big_math("9780471486480"))
+end
+
+def test_big_math_2
+	assert_equal("9",big_math("9780470059029"))
+end
+
+def test_big_math_3
+	assert_equal("0",big_math("9780131495050"))
+end
+
 
 
 
