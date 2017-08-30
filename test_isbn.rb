@@ -69,6 +69,10 @@ def test_key_checker_small_x
 	assert_equal(true,key_checker_small("047195x697"))
 end
 
+def test_key_checker_small_fail
+	assert_equal(false,key_checker_small("0471958z97"))
+end	
+
 
 
 
