@@ -81,6 +81,15 @@ def test_key_checker_large_failed
 	assert_equal(false,key_checker_large("978-&-13-149%05-4"))
 end
 
+def test_math_pass
+	assert_equal("7",math("0471958697"))
+end
+
+def test_math_with_x
+	assert_equal("x",math("877195869x"))
+end
+
+
 
 
 

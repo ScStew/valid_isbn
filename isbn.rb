@@ -83,25 +83,25 @@ def key_checker_large(isbn)
 	end
 end
 
-# def math(arr)
+def math(arr)
 
-# 	counter = 1
-# 	check = []
-# 	tick = arr.length-1
-# 	tick.times do
-# 		mult = arr[counter-1].to_i * counter
-# 		check << mult
-# 	counter += 1
-# 	end
-# 	sum = check.sum	
-# 	checksum = sum%11
-# 	# p "#{checksum} checksum!!!!!!!!!!!!!!!!!"
-# 	if checksum == 10
-# 		checksum = "x"
-# 	else
-# 		checksum.to_s
-# 	end
-# end
+	counter = 1
+	check = []
+	tick = arr.length-1
+	tick.times do
+		mult = arr[counter-1].to_i * counter
+		check << mult
+	counter += 1
+	end
+	sum = check.sum	
+	checksum = sum%11
+	# p "#{checksum} checksum!!!!!!!!!!!!!!!!!"
+	if checksum == 10
+		checksum = "x"
+	else
+		checksum.to_s
+	end
+end
 
 # def big_math(arr)
 # counter = 1
