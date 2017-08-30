@@ -1,0 +1,16 @@
+header{
+	font-size: 12vh;
+	border-style:groove;
+	border-color:red;
+	border-width:2px;
+	color:blue;
+	text-align:center;
+
+}
+
+body{
+	background-image:url("/images/pooh_background.jpg");
+	background-size:100%,100%;
+	color:red;
+	font-size:5vh;
+}
