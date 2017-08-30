@@ -10,7 +10,7 @@ post "/number" do
 	redirect "/results?isbn=" + isbn
 end
 
-get "/results"
+get "/results" do
 	isbn = params[:isbn]
 	results = isbn_validator(isbn)
 	erb :results, locals:{isbn:isbn,results:results}
