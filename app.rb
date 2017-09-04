@@ -15,4 +15,3 @@ get "/results" do
 	results = isbn_validator(isbn)
 	erb :results, locals:{isbn:isbn,results:results}
 end
-

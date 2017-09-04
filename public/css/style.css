@@ -1,16 +1,42 @@
 header{
+	padding: 12vh;
+	margin:0;
 	font-size: 12vh;
-	border-style:groove;
-	border-color:red;
-	border-width:2px;
-	color:blue;
+	background-image:url("/images/borders-png-30.png");
+	background-size: 100%,100%;
+	background-repeat:no-repeat;
+	color:yellow;
 	text-align:center;
-
+	background-color:rgba(108, 127, 110, 0.59);
+    padding-bottom: 50vh;
+    text-shadow: -4px 0px 4px #47d03b;
 }
 
 body{
-	background-image:url("/images/pooh_background.jpg");
-	background-size:100%,100%;
-	color:red;
+
+	background-image:url("/images/apocalypse.jpg");
+	background-size:cover;
+	background-repeat: no-repeat;
+
+}
+
+#text{
+	color:yellow;
 	font-size:5vh;
+	text-align: center;
+	padding: 3vh;
+	text-shadow: -4px 0px 4px #47d03b;
+}
+
+
+
+
+
+#box{
+	border-style:groove;
+	border-color:gray;
+	padding:0;
+	margin:15vh;
+	overflow: hidden
+
 }
