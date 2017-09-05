@@ -17,6 +17,11 @@ get "/csv_returns" do
 	erb :csv_returns, locals:{csv_arrs:csv_arrs}
 end
 
+post "/csv_run" do
+	isbn_arr = params[:isbn_arr]
+	"#{isbn_arr}wooooo"
+end
+
 post "/number" do
 	isbn = params[:isbn]
 	redirect "/results?isbn=" + isbn

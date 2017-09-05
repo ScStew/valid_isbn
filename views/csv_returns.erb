@@ -1,5 +1,9 @@
 heres csv file before validation
-
+<form method = "post" action = "csv_run">
 <%csv_arrs.each do |row|%>
 	<%=row[1]%><br>
+<input type = "hidden" name = "isbn_arr[]" value = "<%=row[1]%>">
+
 <%end%>
+<input type = "submit" value = "move on">
+</form>

@@ -10,13 +10,13 @@ def isbn_validator(isbn)
 				if checksum == arr[-1]
 					"valid"
 				else
-					"invalid: incorrect checknumber" 
+					"invalid" 
 				end
 			else
-				"invalid: incorrect length"
+				"invalid"
 			end
 		else
-			"invalid: incorrect characters"
+			"invalid"
 		end	
 	elsif isbn_special.length == 13
 		if key_checker_large(isbn)
@@ -30,17 +30,17 @@ def isbn_validator(isbn)
 				if checksum == arr[-1]
 					"valid"
 				else
-					"invalid: invalid checknumber"
+					"invalid"
 				end	
 			else
-				"invalid: incorrect length"
+				"invalid"
 			end
 			
 		else
-			"invalid: incorrect characters"
+			"invalid"
 		end
 	else 
-		"invalid:"
+		"invalid"
 		
 	end
 end
