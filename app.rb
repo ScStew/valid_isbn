@@ -18,9 +18,22 @@ get "/csv_returns" do
 end
 
 post "/csv_run" do
-	isbn_arr = params[:isbn_arr]
-	"#{isbn_arr}wooooo"
+	session[:isbn_arr] = params[:isbn_arr]
+	isbn_arr= params[:isbn_arr]
+	valid_arr = []
+		isbn.each do |x|
+		valid_arr << isbn_validator(x)
+			
+		end
+		session[:valid_arr] = valid_arr
+
+	redirect "/validation"
 end
+
+get "/validation" do
+	erb :validation, locals{isbn_arr:session[:isbn_arr],valid_arr:session[:valid_arr]}
+end
+
 
 post "/number" do
 	isbn = params[:isbn]
