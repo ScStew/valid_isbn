@@ -13,7 +13,7 @@ post "/csv" do
 end
 
 get "/csv_returns" do
-	csv_arrs] = CSV.read("isbn.csv")
+	csv_arrs = CSV.read("isbn.csv")
 	erb :csv_returns, locals:{csv_arrs:csv_arrs}
 end
 
