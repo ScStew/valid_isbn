@@ -1,7 +1,9 @@
-here is isbn with validations<br>
+here is isbn with validations<br><br>
 
-<%count = 0%>
-<%isbn_arr.each do |x|%>
-<%=x%> <%=valid_arr[count]%><br>
-<%count += 1%>
-<%end%>
+<div id = "list">
+	<%count = 1%>
+	<%until count == isbn_arr.length%>
+		<%=count%>,<%=isbn_arr[count]%>,<%=valid_arr[count]%><br>
+		<%count += 1%>
+	<%end%>
+</div>

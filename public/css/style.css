@@ -37,6 +37,17 @@ body{
 	border-color:gray;
 	padding:0;
 	margin:15vh;
-	overflow: hidden
+	overflow: hidden;
 
+}
+#list{
+	font-size:2vh;
+	border-style:double;
+	border-color:black;
+	padding:0;
+	margin-left:50vh;
+	margin-right:50vh;
+	background-color:rgba(246, 121, 18, 0.79);
+	border-radius: 5vh;
+	
 }
