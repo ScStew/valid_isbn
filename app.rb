@@ -1,14 +1,24 @@
 require "sinatra"
 require_relative "isbn.rb"
 require "csv"
+enable "sessions"
 
 get "/" do
 	erb :opening_page
 end
 
+post "/csv" do
+	
+	redirect "/csv_returns"
+end
+
+get "/csv_returns" do
+	csv_arrs] = CSV.read("isbn.csv")
+	erb :csv_returns, locals:{csv_arrs:csv_arrs}
+end
+
 post "/number" do
 	isbn = params[:isbn]
-	arr_of_arrs = CSV.read("isbn.csv")
 	redirect "/results?isbn=" + isbn
 end
 
