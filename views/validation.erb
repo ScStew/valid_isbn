@@ -2,8 +2,12 @@ here is isbn with validations<br><br>
 
 <div id = "list">
 	<%count = 1%>
+		<%CSV.open("results.csv", "wb") do |csv|%>
+		<%csv << ["item","isbn","validation"]%>
 	<%until count == isbn_arr.length%>
 		<%=count%>,<%=isbn_arr[count]%>,<%=valid_arr[count]%><br>
+  		<%csv << [count,isbn_arr[count],valid_arr[count]]%>
 		<%count += 1%>
+	<%end%>
 	<%end%>
 </div>

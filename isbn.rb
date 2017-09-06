@@ -85,7 +85,6 @@ end
 
 def math(arr)
 	last =  arr.slice!(-1)
-	p "#{last}"
 	if arr.include?("x")
 		false
 	else
