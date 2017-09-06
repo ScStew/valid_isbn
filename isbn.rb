@@ -7,10 +7,19 @@ def isbn_validator(isbn)
 			
 			if arr.length == 10
 				checksum = math(arr)
-				if checksum == arr[-1]
-					"valid"
+				lastnum = arr[-1].capitalize!
+				if lastnum == nil
+					if checksum == arr[-1]
+						"valid"
+					else
+						"invalid" 
+					end
 				else
-					"invalid" 
+					if lastnum == checksum
+						"valid"
+					else
+						"invalid"
+					end
 				end
 			else
 				"invalid"
@@ -26,12 +35,11 @@ def isbn_validator(isbn)
 				checksum = big_math(arr)
 				# p woo
 				# p arr
-				# p arr[-1]
-				if checksum == arr[-1]
-					"valid"
-				else
-					"invalid"
-				end	
+					if checksum == arr[-1]
+						"valid"
+					else
+						"invalid"
+					end
 			else
 				"invalid"
 			end
@@ -48,7 +56,7 @@ end
 def key_checker_small(isbn)
 	arr = isbn.split(//)
 	true_arr = []
-	valid_keys = ["0","1","2","3","4","5","6","7","8","9","x","-"," "]
+	valid_keys = ["0","1","2","3","4","5","6","7","8","9","x","X","-"," "]
 		arr.each do |x|
 			if valid_keys.include?(x)
 				true_arr << true
@@ -101,7 +109,7 @@ def math(arr)
 		checksum = sum%11
 			# p "#{checksum} checksum!!!!!!!!!!!!!!!!!"
 		if checksum == 10
-			checksum = "x"
+			checksum = "X"
 		else
 			checksum.to_s
 		end
