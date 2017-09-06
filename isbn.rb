@@ -8,6 +8,8 @@ def isbn_validator(isbn)
 			if arr.length == 10
 				checksum = math(arr)
 				lastnum = arr[-1].capitalize!
+
+
 				if lastnum == nil
 					if checksum == arr[-1]
 						"valid"
@@ -94,6 +96,8 @@ end
 def math(arr)
 	last =  arr.slice!(-1)
 	if arr.include?("x")
+		false
+	elsif arr.include?("X")
 		false
 	else
 		arr << last
