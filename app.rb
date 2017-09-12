@@ -11,43 +11,42 @@ get "/" do
 	erb :opening_page
 end
 
-post "/csv" do
-	session[:isbn] = get_object()
-	redirect "/csv_returns"
-end
-
-get "/csv_returns" do
-	
-
-	csv_arrs = CSV.read("isbn.csv")
-	erb :csv_returns, locals:{csv_arrs:csv_arrs}
-end
-
-post "/csv_run" do
-	session[:isbn_arr] = params[:isbn_arr]
-	isbn_arr= params[:isbn_arr]
-	valid_arr = []
-		isbn_arr.each do |x|
-		valid_arr << isbn_validator(x)
-			
-		end
-		session[:valid_arr] = valid_arr
-
-	redirect "/validation"
-end
-
-get "/validation" do
-	erb :validation, locals:{isbn_arr:session[:isbn_arr],valid_arr:session[:valid_arr]}
-end
-
-
 post "/number" do
+	session[:isbn_from_bucket] = get_object()
 	isbn = params[:isbn]
-	redirect "/results?isbn=" + isbn
+	redirect "/one?isbn=" + isbn
 end
 
-get "/results" do
+get "/one" do
 	isbn = params[:isbn]
 	results = isbn_validator(isbn)
-	erb :results, locals:{isbn:isbn,results:results}
+	erb :one, locals:{isbn:isbn,results:results}
 end	
+# post "/csv" do
+
+# 	redirect "/csv_returns"
+# end
+
+# get "/csv_returns" do
+	
+
+# 	csv_arrs = CSV.read("isbn.csv")
+# 	erb :csv_returns, locals:{csv_arrs:csv_arrs}
+# end
+
+# post "/csv_run" do
+# 	session[:isbn_arr] = params[:isbn_arr]
+# 	isbn_arr= params[:isbn_arr]
+# 	valid_arr = []
+# 		isbn_arr.each do |x|
+# 		valid_arr << isbn_validator(x)
+			
+# 		end
+# 		session[:valid_arr] = valid_arr
+
+# 	redirect "/validation"
+# end
+
+# get "/validation" do
+# 	erb :validation, locals:{isbn_arr:session[:isbn_arr],valid_arr:session[:valid_arr]}
+# end
