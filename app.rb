@@ -12,11 +12,12 @@ get "/" do
 end
 
 post "/csv" do
+	session[:isbn] = get_object()
 	redirect "/csv_returns"
 end
 
 get "/csv_returns" do
-	get_object
+	
 
 	csv_arrs = CSV.read("isbn.csv")
 	erb :csv_returns, locals:{csv_arrs:csv_arrs}
