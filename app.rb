@@ -24,13 +24,13 @@ get "/one" do
 end
 
 post "/almost_done" do
-	single_isbn = params[:single_isbn]
-	redirect "/results?single_isbn=" + single_isbn
+	session[:single_isbn] = params[:single_isbn]
+	redirect "/results?"
 end	
 
 get "/results" do
-single_isbn = params[:single_isbn]
-erb :results, locals:{single_isbn:single_isbn,bucket_isbn:session[:isbn_from_bucket]}
+
+erb :results, locals:{single_isbn:session[:single_isbn],bucket_isbn:session[:isbn_from_bucket]}
 end
 # post "/csv" do
 
