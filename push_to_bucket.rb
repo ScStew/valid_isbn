@@ -22,4 +22,20 @@ obj.put(body: 'some code here to show something being added to the bucket')
       obj.put(body: file)
     end
 end
-connect_to_s3()
+
+
+
+
+
+def get_object()
+   s3 = Aws::S3::Client.new
+  resp = s3.get_object(bucket:'sms-isbn-bucket', key:'results.csv')
+  isbn = resp.body.read
+  if isbn == nil
+    ret = nil
+  else
+    ret = isbn.split
+      
+  end
+  ret
+end

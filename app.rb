@@ -1,5 +1,6 @@
 require "sinatra"
 require_relative "isbn.rb"
+require_relative "push_to_bucket.rb"
 require 'rubygems'
 require 'aws-sdk'
 require 'csv'
@@ -7,7 +8,6 @@ require 'csv'
 enable "sessions"
 
 get "/" do
-	connect_to_s3
 	erb :opening_page
 end
 
@@ -16,6 +16,7 @@ post "/csv" do
 end
 
 get "/csv_returns" do
+	get_object
 
 	csv_arrs = CSV.read("isbn.csv")
 	erb :csv_returns, locals:{csv_arrs:csv_arrs}
