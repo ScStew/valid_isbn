@@ -21,7 +21,17 @@ get "/one" do
 	isbn = params[:isbn]
 	results = isbn_validator(isbn)
 	erb :one, locals:{isbn:isbn,results:results}
+end
+
+post "/almost_done" do
+	single_isbn = params[:single_isbn]
+	redirect "/results?single_isbn=" + single_isbn
 end	
+
+get "/results" do
+single_isbn = params[:single_isbn]
+erb :results, locals:{single_isbn:single_isbn,bucket_isbn:session[:isbn_from_bucket]}
+end
 # post "/csv" do
 
 # 	redirect "/csv_returns"
