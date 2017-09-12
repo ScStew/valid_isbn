@@ -6,12 +6,21 @@ Here is all the isbn so far
 	<%count = last[0].to_i%>
 	<%count += 1%>
 	<%=count%>,<%=single_isbn[0]%>,<%=single_isbn[1]%>
-
 	<%bucket_isbn << "#{count},#{single_isbn[0]},#{single_isbn[1]}"%>
+	
 
+
+
+	<%CSV.open("test.csv", "wb") do |csv|%>
+		<%bucket_isbn.each do |item|%>
+			<%csv << [item]%>
+		<%end%>
+	<%end%>
 <% s3 = Aws::S3::Resource.new(region: 'us-east-2')%>
 <% obj = s3.bucket("sms-isbn-bucket").object("isbn_bucket.csv") %>
-<% obj.put(body: bucket_isbn.to_s)%>
+<%File.open('test.csv', 'rb') do |file|%>
+  <%    obj.put(body: file)%>
+<%end%>
 
 
 
