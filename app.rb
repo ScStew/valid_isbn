@@ -4,8 +4,8 @@ require_relative "push_to_bucket.rb"
 require 'rubygems'
 require 'aws-sdk'
 require 'csv'
- load "./local_env.rb"
-enable "sessions"
+load './local_env.rb' if File.exist?('./local_env.rb')
+enable :sessions
 
 get "/" do
 	erb :opening_page
