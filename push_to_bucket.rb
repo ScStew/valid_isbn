@@ -1,7 +1,6 @@
 require 'rubygems'
 require 'aws-sdk'
 require 'csv'
-  load "./local_env.rb" 
 def connect_to_s3()
 Aws::S3::Client.new(
 
