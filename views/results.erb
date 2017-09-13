@@ -1,13 +1,18 @@
+<div id = "text">
 Here is all the isbn so far
-<%bucket_isbn.each do |item|%>
-	<%=item%><br>
-<%end%>
-	<%last = bucket_isbn[-1].split(/,/)%>
-	<%count = last[0].to_i%>
-	<%count += 1%>
-	<%=count%>,<%=single_isbn[0]%>,<%=single_isbn[1]%>
-	<%bucket_isbn << "#{count},#{single_isbn[0]},#{single_isbn[1]}"%>
-	
+	<div id = "box">
+		<%bucket_isbn.each do |item|%>
+			<%=item%><br>
+		<%end%>
+			<%last = bucket_isbn[-1].split(/,/)%>
+			<%count = last[0].to_i%>
+			<%count += 1%>
+			<%=count%>,<%=single_isbn[0]%>,<%=single_isbn[1]%>
+	</div>
+</div>
+
+<%bucket_isbn << "#{count},#{single_isbn[0]},#{single_isbn[1]}"%>
+		
 
 
 
