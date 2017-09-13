@@ -31,11 +31,11 @@ def get_object()
    s3 = Aws::S3::Client.new
   resp = s3.get_object(bucket:'sms-isbn-bucket', key:'results.csv')
   isbn = resp.body.read
-  if isbn == nil
-    ret = nil
-  else
     ret = isbn.split
-      
-  end
-  ret
+    wret = []
+    ret.each do |item|
+    item.gsub!(/"/, '')
+    wret << item
+    end
+  wret
 end

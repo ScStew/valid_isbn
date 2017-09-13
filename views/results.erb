@@ -1,17 +1,15 @@
 <div id = "text">
 Here is all the isbn so far
 	<div id = "box">
-		<%bucket_isbn.each do |item|%>
-			<%=item%><br>
-		<%end%>
-			<%last = bucket_isbn[-1].split(/,/)%>
-			<%count = last[0].to_i%>
-			<%count += 1%>
-			<%=count%>,<%=single_isbn[0]%>,<%=single_isbn[1]%>
+			<%bucket_isbn.each do |item|%>
+				<%=item%><br>
+			<%end%>
+			<%count = bucket_isbn.count%>
+				<%=count%>,<%=single_isbn[0]%>,<%=single_isbn[1]%>
+				<%bucket_isbn << "#{count},#{single_isbn[0]},#{single_isbn[1]}"%>
 	</div>
 </div>
 
-<%bucket_isbn << "#{count},#{single_isbn[0]},#{single_isbn[1]}"%>
 		
 
 
@@ -22,7 +20,7 @@ Here is all the isbn so far
 		<%end%>
 	<%end%>
 <% s3 = Aws::S3::Resource.new(region: 'us-east-2')%>
-<% obj = s3.bucket("sms-isbn-bucket").object("isbn_bucket.csv") %>
+<% obj = s3.bucket("sms-isbn-bucket").object("results.csv") %>
 <%File.open('test.csv', 'rb') do |file|%>
   <%    obj.put(body: file)%>
 <%end%>
