@@ -5,8 +5,9 @@ Here is all the isbn so far
 				<%=item%><br>
 			<%end%>
 			<%count = bucket_isbn.count%>
-				<%=count%>,<%=single_isbn[0]%>,<%=single_isbn[1]%>
-				<%bucket_isbn << "#{count},#{single_isbn[0]},#{single_isbn[1]}"%>
+			<%=count%>,<%=single_isbn[0]%>,<%=single_isbn[1]%>
+			<%isbn_s = single_isbn[0].gsub(/[^0-9A-Za-z,]/, "")%>
+			<%bucket_isbn << "#{count},#{isbn_s},#{single_isbn[1]}"%>
 	</div>
 </div>
 

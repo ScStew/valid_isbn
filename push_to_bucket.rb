@@ -34,7 +34,7 @@ def get_object()
     ret = isbn.split
     wret = []
     ret.each do |item|
-    item.gsub!(/"/, '')
+    item.gsub!(/[^0-9A-Za-z,]/, "")
     wret << item
     end
   wret
