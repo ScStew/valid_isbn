@@ -32,6 +32,14 @@ get "/results" do
 
 erb :results, locals:{single_isbn:session[:single_isbn],bucket_isbn:session[:isbn_from_bucket]}
 end
+
+post "/final" do 
+	redirect "/final?"
+end
+
+get "/final" do 
+	erb :final
+end
 # post "/csv" do
 
 # 	redirect "/csv_returns"
